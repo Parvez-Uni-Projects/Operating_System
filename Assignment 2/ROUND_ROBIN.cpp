@@ -112,9 +112,9 @@ int main()
             mapCompletionTime[process.second.second] = elapsedTime;
         }
 
-        // cout << startTime << " " << process.second.second << " " << elapsedTime << endl;
+        cout << startTime << " " << process.second.second << " " << elapsedTime << endl;
 
-        cout << process.second.second << " ";
+        //cout << process.second.second << " ";
 
         startTime = elapsedTime;
 
