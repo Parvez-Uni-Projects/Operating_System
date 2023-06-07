@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(from,to) for (int i = from; i < to; i++)
+#define rep(from, to) for (int i = from; i < to; i++)
 #define ss second.second
 #define sf second.first
+#define vJumbo vector<pair<int, pair<int, int>>>
 
 int32_t main()
 {
@@ -14,25 +15,26 @@ int32_t main()
 
     // cout << "Enter the CPU times ";
 
-    vector<pair<int, pair<int, int>>> process(processNumber);
+    vJumbo process(processNumber);
+    vector<int> cpuTime(processNumber);
+    vector<int> arrivalTime(processNumber);
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
-        int cpuTime;
-        cin >> cpuTime;
 
-        process[i].sf = cpuTime;
+        cin >> cpuTime[i];
+
+        process[i].sf = cpuTime[i];
         process[i].ss = i;
     }
 
     // cout << "Enter the arrival times ";
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
-        int arrivalTime;
-        cin >> arrivalTime;
 
-        process[i].first = arrivalTime;
+        cin >> arrivalTime[i];
+        process[i].first = arrivalTime[i];
     }
 
     sort(process.begin(), process.end());
@@ -45,7 +47,7 @@ int32_t main()
 
     int cpuProcessTime = process[0].sf;
 
-    rep(1,processNumber)
+    rep(1, processNumber)
     {
         int currProcess = process[i].ss;
         // cout << "CURR PROCESS\t" << currProcess << endl;
@@ -73,7 +75,7 @@ int32_t main()
         // cout << endl;
     }
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
         swap(process[i].first, process[i].ss);
     }
@@ -84,14 +86,14 @@ int32_t main()
     int totalWaitingTime = 0;
     int totalTurnaroundTime = 0;
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
         cout << "Process " << process[i].first + 1 << ": Waiting Time: " << waitTurnTime[i].sf << " Turnaround Time: " << waitTurnTime[i].ss << endl;
         totalWaitingTime += waitTurnTime[i].sf;
         totalTurnaroundTime += waitTurnTime[i].ss;
     }
 
-    cout << setprecision(2) << fixed ;
+    cout << setprecision(2) << fixed;
 
     cout << "Average Waiting time: " << (float)totalWaitingTime / (float)processNumber << endl;
     cout << "Average Turnaround time: " << (float)totalTurnaroundTime / (float)processNumber << endl;
@@ -100,7 +102,7 @@ int32_t main()
 }
 
 /*
-3 
-5 7 9 
+3
+5 7 9
 4 0 2
 */

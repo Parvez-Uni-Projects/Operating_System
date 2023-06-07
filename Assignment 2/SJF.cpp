@@ -38,7 +38,6 @@ int getCurrentProcess(vJumbo process, int cpuProcessTime)
     return currProcess;
 }
 
-
 int32_t main()
 {
 
@@ -51,17 +50,14 @@ int32_t main()
     // cout << "Enter the CPU times ";
 
     vJumbo process(processNumber);
-    vector <int> cpuTime(processNumber);
-    vector <int> arrivalTime(processNumber);
-
+    vector<int> cpuTime(processNumber);
+    vector<int> arrivalTime(processNumber);
     rep(0, processNumber)
     {
-        int x;
-        cin >> x;
 
-        cpuTime[i] = x;
+        cin >> cpuTime[i];
 
-        process[i].sf = x;
+        process[i].sf = cpuTime[i];
         process[i].ss = i;
     }
 
@@ -69,11 +65,10 @@ int32_t main()
 
     rep(0, processNumber)
     {
-        int x;
-        cin >> x;
 
-        arrivalTime[i] = x;
-        process[i].first = x;
+        cin >> arrivalTime[i];
+
+        process[i].first = arrivalTime[i];
     }
 
     sort(process.begin(), process.end());
@@ -86,11 +81,9 @@ int32_t main()
 
     processDone[process[0].ss] = true;
 
-    //cout << "CURR PROCESS\t" << process[0].ss << endl;
+    // cout << "CURR PROCESS\t" << process[0].ss << endl;
 
     int cpuProcessTime = process[0].sf;
-
-   
 
     rep(1, processNumber)
     {
@@ -98,29 +91,29 @@ int32_t main()
         int currProcess = getCurrentProcess(process, cpuProcessTime);
         processDone[currProcess] = true;
 
-        //cout << "CURR PROCESS\t" << currProcess << endl;
+        // cout << "CURR PROCESS\t" << currProcess << endl;
         waitTurnTime[i].first = currProcess;
 
         int currArrivalTime = arrivalTime[currProcess];
-        //cout << "CURR ARRIVAL\t" << currArrivalTime << endl;
+        // cout << "CURR ARRIVAL\t" << currArrivalTime << endl;
 
         int currWaitingTime = cpuProcessTime - currArrivalTime;
-        //cout << "CURR WAITING TIME\t" << currWaitingTime << endl;
+        // cout << "CURR WAITING TIME\t" << currWaitingTime << endl;
         waitTurnTime[i].sf = currWaitingTime;
 
         int currCpuTime = cpuTime[currProcess];
         int currTurnaroundTime = currWaitingTime + currCpuTime;
-        //cout << "CURR TURNAROUND TIME\t" << currTurnaroundTime << endl;
+        // cout << "CURR TURNAROUND TIME\t" << currTurnaroundTime << endl;
         waitTurnTime[i].ss = currTurnaroundTime;
 
-        //cout << "CURR CPU TIME\t" << currCpuTime << endl;
+        // cout << "CURR CPU TIME\t" << currCpuTime << endl;
 
         cpuProcessTime += currCpuTime;
 
         cout << endl;
     }
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
         swap(process[i].first, process[i].ss);
     }
@@ -131,14 +124,14 @@ int32_t main()
     int totalWaitingTime = 0;
     int totalTurnaroundTime = 0;
 
-    rep(0,processNumber)
+    rep(0, processNumber)
     {
         cout << "Process " << process[i].first + 1 << ": Waiting Time: " << waitTurnTime[i].sf << " Turnaround Time: " << waitTurnTime[i].ss << endl;
         totalWaitingTime += waitTurnTime[i].sf;
         totalTurnaroundTime += waitTurnTime[i].ss;
     }
 
-    cout << setprecision(2) << fixed ;
+    cout << setprecision(2) << fixed;
 
     cout << "Average Waiting time : " << (float)totalWaitingTime / (float)processNumber << endl;
     cout << "Average Turnaround time : " << (float)totalTurnaroundTime / (float)processNumber << endl;
@@ -147,7 +140,7 @@ int32_t main()
 }
 
 /*
-3 
-5 7 9 
+3
+5 7 9
 4 0 2
 */
