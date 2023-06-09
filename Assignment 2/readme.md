@@ -8,3 +8,6 @@
 
 ![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/40dfde7c-a046-435c-b544-8893f3b0b8f9)
 ![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/7244ba01-efca-484f-8408-1405314abd59)
+
+
+# SRTN 
