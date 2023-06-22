@@ -103,7 +103,7 @@ class Producer implements Runnable {
     }
 
     private void produceItem() {
-        int item = (int) (Math.random() * 100); // Generate a random item
+        int item = (int) (Math.random() * 200); // Generate a random item
         buffer[index] = item; // Insert the item into the buffer at the current index
         index = (index + 1) % buffer.length; // Move the index to the next position in a circular manner
         System.out.println("Producer " + Thread.currentThread().getId() + ": Data " + item + " is inserted in the buffer");
