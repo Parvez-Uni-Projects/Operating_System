@@ -4,4 +4,4 @@ Welcome to the Operating System Lab Assignments repository! This repository cont
 ## Operating system used
  Linux
 
-## practice
+## Algorithms
