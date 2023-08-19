@@ -42,12 +42,14 @@ int32_t main()
 {
 
     int processNumber;
-    // cout << "Enter the number of process: ";
+    cout << "Enter the number of process: ";
     cin >> processNumber;
+
+    cout << processNumber << endl;
 
     processDone.resize(processNumber, false);
 
-    // cout << "Enter the CPU times ";
+    cout << "Enter the CPU times ";
 
     vJumbo process(processNumber);
     vector<int> cpuTime(processNumber);
@@ -56,20 +58,24 @@ int32_t main()
     {
 
         cin >> cpuTime[i];
+        cout << cpuTime[i] << " ";
 
         process[i].sf = cpuTime[i];
         process[i].ss = i;
     }
 
-    // cout << "Enter the arrival times ";
+     cout << "\nEnter the arrival times ";
 
     rep(0, processNumber)
     {
 
         cin >> arrivalTime[i];
+        cout << arrivalTime[i] << " ";
 
         process[i].first = arrivalTime[i];
     }
+
+    cout << endl;
 
     sort(process.begin(), process.end());
 

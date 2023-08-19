@@ -1,13 +1,131 @@
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/996d37c1-cfdb-4fa6-b4d4-ea72a3accfbf)
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/9ca73f21-cfe9-4e9c-9cca-776f1afe5063)
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/edb1e6f4-ecfb-45cd-9f02-54b5d062362f)
-
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/1e0e5d84-07b5-49ca-b20e-06a624cde5f0)
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/4ad708b8-94ac-4fe6-b5bd-31a0e8ba8985)
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/fbb5d9e3-5b5a-454f-b5c5-a011c9e292d0)
-
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/40dfde7c-a046-435c-b544-8893f3b0b8f9)
-![image](https://github.com/piru72/Operating-System-Lab/assets/63257806/7244ba01-efca-484f-8408-1405314abd59)
+Write codes to implement the following scheduling algorithms: FCFS, SJF and SRTN (Shortest Remaining Time Next).
 
 
-# SRTN 
+Overview of waiting time and turnaround time for the following scheduling algorithms:
+
+| Algorithm | Waiting Time | Turnaround Time |
+| --------- | ------------ | --------------- |
+| FCFS      |    5.57      |     12.67       |
+| SJF       |    4.33      |     11.33       |
+| SRTN      |    4.33      |     11.33       |
+
+## FCFS (First Come First Serve)
+
+### Problem Statement
+
+Write a program to implement the FCFS scheduling algorithm. The program should accept the number of processes, arrival time and burst time of each process as input and display the Gantt chart and the average waiting time.
+
+### Algorithm
+
+1. Start
+2. Accept the number of processes, arrival time and burst time of each process as input.
+3. Sort the processes according to their arrival time.
+4. Calculate the waiting time of each process.
+5. Calculate the average waiting time.
+6. Display the Gantt chart and the average waiting time.
+7. Stop
+
+### Input
+
+```
+3
+5 7 9
+4 0 2
+```
+
+### Output
+
+```
+
+Enter the number of process:  3
+Enter the CPU times : 5 7 9 
+Enter the arrival times : 4 0 2 
+Process 1: Waiting Time: 12 Turnaround Time: 17
+Process 2: Waiting Time: 0 Turnaround Time: 7
+Process 3: Waiting Time: 5 Turnaround Time: 14
+Average Waiting time: 5.67
+Average Turnaround time: 12.67
+
+```
+
+
+## SJF (Shortest Job First)
+
+### Problem Statement
+
+Write a program to implement the SJF scheduling algorithm. The program should accept the number of processes, arrival time and burst time of each process as input and display the Gantt chart and the average waiting time.
+
+### Algorithm
+
+1. Start
+2. Accept the number of processes, arrival time and burst time of each process as input.
+3. Sort the processes according to their burst time.
+4. Calculate the waiting time of each process.
+5. Calculate the average waiting time.
+6. Display the Gantt chart and the average waiting time.
+7. Stop
+
+### Input
+
+```
+3
+5 7 9
+4 0 2
+```
+
+### Output
+
+```
+Enter the number of process: 3
+Enter the CPU times 5 7 9 
+Enter the arrival times 4 0 2 
+
+
+Process 1: Waiting Time: 3 Turnaround Time: 8
+Process 2: Waiting Time: 0 Turnaround Time: 7
+Process 3: Waiting Time: 10 Turnaround Time: 19
+Average Waiting time : 4.33
+Average Turnaround time : 11.33
+```
+
+## SRTN (Shortest Remaining Time Next)
+
+### Problem Statement
+
+Write a program to implement the SRTN scheduling algorithm. The program should accept the number of processes, arrival time and burst time of each process as input and display the Gantt chart and the average waiting time.
+
+### Algorithm
+
+1. Start
+2. Accept the number of processes, arrival time and burst time of each process as input.
+3. Sort the processes according to their arrival time.
+4. Calculate the waiting time of each process.
+5. Calculate the average waiting time.
+6. Display the Gantt chart and the average waiting time.
+7. Stop
+
+### Input
+
+```
+3
+5 7 9
+4 0 2
+```
+
+### Output
+
+```
+
+Enter the number of process: 3
+Enter the CPU times 5 7 9 
+Enter the arrival times 4 0 2 
+Process 1: Waiting Time: 3 Turnaround Time: 8
+Process 2: Waiting Time: 0 Turnaround Time: 7
+Process 3: Waiting Time: 10 Turnaround Time: 19
+Average Waiting time : 4.33
+Average Turnaround time : 11.33
+
+```
+
+
+
