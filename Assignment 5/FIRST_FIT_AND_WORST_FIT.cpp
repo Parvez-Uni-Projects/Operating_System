@@ -83,13 +83,17 @@ void calculateextFrag() {
 }
 
 int main() {
-    holes = {50, 200, 70, 115, 15};
+    
 
     requests = {100, 10, 35, 15, 23, 6, 25, 55, 88, 40};
 
+    holes = {50, 200, 70, 115, 15};
     worstFitAllocation();
+
     holes = {50, 200, 70, 115, 15};
     firstFitAllocation();
+
+
     calculateextFrag();
 
     cout << "\nExternal Fragmentation: " << extFrag << "\n";

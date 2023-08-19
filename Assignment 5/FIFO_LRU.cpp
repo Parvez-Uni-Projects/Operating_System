@@ -84,7 +84,7 @@ int main() {
     vector<int> referenceString = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1};
     int numFrames = 3;
 
-    lruPageReplacement(referenceString, numFrames);
+    //lruPageReplacement(referenceString, numFrames);
     fifoPageReplacement(referenceString, numFrames);
 
     return 0;
