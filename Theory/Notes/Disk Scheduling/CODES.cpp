@@ -212,6 +212,10 @@ int main()
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
+        if (x > cylinder)
+        {
+            continue;
+        }
         req.push_back(x);
     }
 
@@ -226,7 +230,7 @@ int main()
     //     cout << req[i] << " ";
     // }
 
-    SSTF(req, head);
+     SSTF(req, head);
 
     FCFS(req, head);
     SCAN(req, head);
